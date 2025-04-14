@@ -1,2 +1,1 @@
-pyqt5
-PyQt5-stubs==5.15.6.0
+pycryptodome
