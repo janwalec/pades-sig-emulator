@@ -1,4 +1,8 @@
 import os
+
+#from Crypto.SelfTest.Protocol.test_ecdh import public_key
+from Crypto.Signature import pkcs1_15
+
 from encryption_manager import *
 
 class AppLogic:
@@ -6,8 +10,11 @@ class AppLogic:
         self.encryption_manager = EncryptionManager()
         self.file_chosen = None
         self.pendrive_attached = ""
-        self.key_found = None
+        self.encrypted_key_on_pendrive = None
         self.full_path = ""
+        self.path_to_public_keys = os.path.join("stored_public_keys", "key.pub")
+        self.decrypted_key = None
+        self.pdf_to_sign = None
 
     def check_if_pdf(self, file_name):
         return file_name.lower().endswith(".pdf")
@@ -21,10 +28,10 @@ class AppLogic:
         self.full_path = full_path
         try:
             with open(full_path, "rb") as f:
-                self.key_found = True
+                self.encrypted_key_on_pendrive = f.read()
                 return True
         except FileNotFoundError:
-            self.key_found = False
+            self.encrypted_key_on_pendrive = None
             return False
 
     def set_pendrive(self, pendrive):
@@ -38,8 +45,62 @@ class AppLogic:
             self.file_chosen = None
             return False
 
+    def save_keys(self, public_key, encrypted_key):
+        with open(self.full_path, "wb") as f:
+            f.write(encrypted_key)
+
+        with open(self.path_to_public_keys, "wb") as f:
+            f.write(public_key)
+
     def generate_key(self, pin):
         private_key, public_key = self.encryption_manager.generate_RSA_keys()
         encrypted = self.encryption_manager.AES_key_encryption(pin, private_key)
-        with open(self.full_path, "wb") as f:
-            f.write(encrypted)
+        self.save_keys(public_key, encrypted)
+
+    def compare_pin(self, pin):
+        with open(self.path_to_public_keys, "rb") as f:
+            try:
+                print(self.encrypted_key_on_pendrive)
+                self.decrypted_key = self.encryption_manager.decrypt_private_key(self.encrypted_key_on_pendrive, pin)
+            except ValueError as e:
+                self.decrypted_key = None
+                raise e
+
+    def sign_document(self):
+        if self.decrypted_key is None:
+            raise ValueError("Private key missing")
+
+        if not self.pdf_to_sign:
+            raise ValueError("Wrong pdf")
+
+        private_key = RSA.import_key(self.decrypted_key)
+
+        pdf_hash = self.encryption_manager.hash_pdf(self.pdf_to_sign)
+
+        signature = pkcs1_15.new(private_key).sign(pdf_hash)
+
+        signature_path = os.path.join("pdf", "signed_signature.sig")
+        with open(signature_path, "wb") as f:
+            f.write(signature)
+
+    def check_signed_document(self):
+        if not self.pdf_to_sign:
+            raise ValueError("Wrong pdf")
+        public_key_file = None
+        with open(self.path_to_public_keys, "rb") as f:
+            public_key_file = f.read()
+
+        public_key = RSA.import_key(public_key_file)
+        pdf_hash = self.encryption_manager.hash_pdf(self.pdf_to_sign)
+
+        signature_path = os.path.join("pdf", "signed_signature.sig")
+        signature = None
+        with open(signature_path, "rb") as f:
+            signature = f.read()
+        try:
+            pkcs1_15.new(public_key).verify(pdf_hash, signature)
+            return True
+        except ValueError as e:
+            return False
+
+

@@ -7,10 +7,21 @@ from Crypto.Cipher import AES
 
 class EncryptionManager():
     @staticmethod
+    def hash_pdf(file_path):
+        h = SHA256.new()
+        with open(file_path, "rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                h.update(chunk)
+        return h
+
+
+    @staticmethod
     def generate_RSA_keys():
-        key = RSA.generate(2056)
+        print("GENERATING RSA")
+        key = RSA.generate(4096)
         private_key = key.export_key()
         public_key = key.publickey().export_key()
+        print("Generating finished")
         return private_key, public_key
 
     @staticmethod
