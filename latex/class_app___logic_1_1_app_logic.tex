@@ -1,0 +1,279 @@
+\doxysection{App\+\_\+\+Logic.\+App\+Logic Class Reference}
+\hypertarget{class_app___logic_1_1_app_logic}{}\label{class_app___logic_1_1_app_logic}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+
+
+Klasa logiki aplikacji, obsługująca operacje na kluczach i podpisywaniu dokumentów PDF.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a0dc4c74e47f2ddf675df121c7a6313d0}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy inicjalizujący menedżera szyfrowania oraz zmienne stanu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_ab5fff14bb73084489095a0a4b26018fb}{check\+\_\+if\+\_\+pdf}} (self, file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Sprawdza czy podany plik to PDF. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a3e47632da7aa06610cd556cb19d9795f}{detect\+\_\+key}} (self)
+\begin{DoxyCompactList}\small\item\em Wykrywa zaszyfrowany klucz prywatny na dołączonym pendrive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a454b7f46ed3209963e4991d7ccda9970}{set\+\_\+pendrive}} (self, pendrive)
+\begin{DoxyCompactList}\small\item\em Ustawia ścieżkę do aktualnie podłączonego pendrive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a738d2483a9e269224636e7e32725f1cd}{set\+\_\+file}} (self, filename)
+\begin{DoxyCompactList}\small\item\em Ustawia ścieżkę do wybranego pliku PDF do podpisania. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a1421a0ce224a72a90b2f2ef96a9bf430}{save\+\_\+keys}} (self, public\+\_\+key, encrypted\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Zapisuje klucze publiczny (na dysku) i zaszyfrowany klucz prywatny (na pendrive) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_abf7c1bb850d6d2165a02d2157908326b}{generate\+\_\+key}} (self, pin)
+\begin{DoxyCompactList}\small\item\em Generuje parę kluczy RSA i szyfruje klucz prywatny na podstawie PIN-\/u. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a31bfcda9c769ce5707ce48e651dffa36}{compare\+\_\+pin}} (self, pin)
+\begin{DoxyCompactList}\small\item\em Próbuje "{}odszyfrować"{} zaszyfrowany klucz prywatny używając PIN. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a749682197f0e1a1cde6f4169471d2f8b}{sign\+\_\+document}} (self)
+\begin{DoxyCompactList}\small\item\em Podpisuje wybrany plik PDF używając klucza prywatnego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a3a4702324e6cafb4e9e098abff81babe}{check\+\_\+signed\+\_\+document}} (self)
+\begin{DoxyCompactList}\small\item\em Weryfikuje podpis pliku PDF względem zapisanego klucza publicznego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_ab4551da5dd5f131640aa1e9932d38809}{encryption\+\_\+manager}} = \mbox{\hyperlink{classencryption__manager_1_1_encryption_manager}{Encryption\+Manager}}()
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a3765cc2eb67b16c1acf8ebfd2450cd58}{file\+\_\+chosen}} = None
+\item 
+str \mbox{\hyperlink{class_app___logic_1_1_app_logic_a5af3a6fbb8d0b96b93b3d7bdf292cfd4}{pendrive\+\_\+attached}} = "{}"{}
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_ae62f15617e47d9e5d4f06193f15a09b2}{encrypted\+\_\+key\+\_\+on\+\_\+pendrive}} = None
+\item 
+str \mbox{\hyperlink{class_app___logic_1_1_app_logic_a4ef9c7b2a2d6ee49d64358d125da2a1f}{full\+\_\+path}} = "{}"{}
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_ae13855bf2ce8fa37d4091fe1d0abf99c}{path\+\_\+to\+\_\+public\+\_\+keys}} = os.\+path.\+join("{}stored\+\_\+public\+\_\+keys"{}, "{}key.\+pub"{})
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a78c1041d2f54e372cf0d9b034dc25d7f}{decrypted\+\_\+key}} = None
+\item 
+\mbox{\hyperlink{class_app___logic_1_1_app_logic_a3fbd83ee1555cb3a1a1f9436eb129e08}{pdf\+\_\+to\+\_\+sign}} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa logiki aplikacji, obsługująca operacje na kluczach i podpisywaniu dokumentów PDF. 
+
+\label{doc-constructors}
+\Hypertarget{class_app___logic_1_1_app_logic_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_app___logic_1_1_app_logic_a0dc4c74e47f2ddf675df121c7a6313d0}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a0dc4c74e47f2ddf675df121c7a6313d0} 
+App\+\_\+\+Logic.\+App\+Logic.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy inicjalizujący menedżera szyfrowania oraz zmienne stanu. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_app___logic_1_1_app_logic_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_app___logic_1_1_app_logic_ab5fff14bb73084489095a0a4b26018fb}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!check\_if\_pdf@{check\_if\_pdf}}
+\index{check\_if\_pdf@{check\_if\_pdf}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{check\_if\_pdf()}{check\_if\_pdf()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_ab5fff14bb73084489095a0a4b26018fb} 
+App\+\_\+\+Logic.\+App\+Logic.\+check\+\_\+if\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{file\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza czy podany plik to PDF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & Nazwa pliku do sprawdzenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True jeśli plik ma rozszerzenie .pdf, False w przeciwnym razie 
+\end{DoxyReturn}
+\Hypertarget{class_app___logic_1_1_app_logic_a3a4702324e6cafb4e9e098abff81babe}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!check\_signed\_document@{check\_signed\_document}}
+\index{check\_signed\_document@{check\_signed\_document}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{check\_signed\_document()}{check\_signed\_document()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a3a4702324e6cafb4e9e098abff81babe} 
+App\+\_\+\+Logic.\+App\+Logic.\+check\+\_\+signed\+\_\+document (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Weryfikuje podpis pliku PDF względem zapisanego klucza publicznego. 
+
+\begin{DoxyReturn}{Returns}
+bool True jeśli podpis jest poprawny, False w przeciwnym wypadku 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Value\+Error} & jeśli plik PDF nie został wybrany \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_app___logic_1_1_app_logic_a31bfcda9c769ce5707ce48e651dffa36}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!compare\_pin@{compare\_pin}}
+\index{compare\_pin@{compare\_pin}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{compare\_pin()}{compare\_pin()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a31bfcda9c769ce5707ce48e651dffa36} 
+App\+\_\+\+Logic.\+App\+Logic.\+compare\+\_\+pin (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Próbuje "{}odszyfrować"{} zaszyfrowany klucz prywatny używając PIN. 
+
+Sprawdza czy istnieje zapisany klucz publiczny. 
+\begin{DoxyParams}{Parameters}
+{\em pin} & PIN używany do odszyfrowania klucza prywatnego \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Value\+Error} & jeśli odszyfrowanie nie powiedzie się \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_app___logic_1_1_app_logic_a3e47632da7aa06610cd556cb19d9795f}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!detect\_key@{detect\_key}}
+\index{detect\_key@{detect\_key}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{detect\_key()}{detect\_key()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a3e47632da7aa06610cd556cb19d9795f} 
+App\+\_\+\+Logic.\+App\+Logic.\+detect\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Wykrywa zaszyfrowany klucz prywatny na dołączonym pendrive. 
+
+\begin{DoxyReturn}{Returns}
+bool True jeśli klucz został znaleziony, False w przeciwnym wypadku 
+\end{DoxyReturn}
+\Hypertarget{class_app___logic_1_1_app_logic_abf7c1bb850d6d2165a02d2157908326b}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!generate\_key@{generate\_key}}
+\index{generate\_key@{generate\_key}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{generate\_key()}{generate\_key()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_abf7c1bb850d6d2165a02d2157908326b} 
+App\+\_\+\+Logic.\+App\+Logic.\+generate\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Generuje parę kluczy RSA i szyfruje klucz prywatny na podstawie PIN-\/u. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & PIN używany do szyfrowania klucza prywatnego \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_app___logic_1_1_app_logic_a1421a0ce224a72a90b2f2ef96a9bf430}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!save\_keys@{save\_keys}}
+\index{save\_keys@{save\_keys}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{save\_keys()}{save\_keys()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a1421a0ce224a72a90b2f2ef96a9bf430} 
+App\+\_\+\+Logic.\+App\+Logic.\+save\+\_\+keys (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{public\+\_\+key}{, }\item[{}]{encrypted\+\_\+key}{}\end{DoxyParamCaption})}
+
+
+
+Zapisuje klucze publiczny (na dysku) i zaszyfrowany klucz prywatny (na pendrive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em public\+\_\+key} & Klucz publiczny w formacie bajtowym \\
+\hline
+{\em encrypted\+\_\+key} & Zaszyfrowany klucz prywatny w formacie bajtowym \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_app___logic_1_1_app_logic_a738d2483a9e269224636e7e32725f1cd}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!set\_file@{set\_file}}
+\index{set\_file@{set\_file}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{set\_file()}{set\_file()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a738d2483a9e269224636e7e32725f1cd} 
+App\+\_\+\+Logic.\+App\+Logic.\+set\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ścieżkę do wybranego pliku PDF do podpisania. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Ścieżka do pliku \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True jeśli plik jest poprawnym PDF, False jeśli nie 
+\end{DoxyReturn}
+\Hypertarget{class_app___logic_1_1_app_logic_a454b7f46ed3209963e4991d7ccda9970}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!set\_pendrive@{set\_pendrive}}
+\index{set\_pendrive@{set\_pendrive}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{set\_pendrive()}{set\_pendrive()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a454b7f46ed3209963e4991d7ccda9970} 
+App\+\_\+\+Logic.\+App\+Logic.\+set\+\_\+pendrive (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pendrive}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ścieżkę do aktualnie podłączonego pendrive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pendrive} & Ścieżka do pendrive \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_app___logic_1_1_app_logic_a749682197f0e1a1cde6f4169471d2f8b}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!sign\_document@{sign\_document}}
+\index{sign\_document@{sign\_document}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{sign\_document()}{sign\_document()}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a749682197f0e1a1cde6f4169471d2f8b} 
+App\+\_\+\+Logic.\+App\+Logic.\+sign\+\_\+document (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Podpisuje wybrany plik PDF używając klucza prywatnego. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Value\+Error} & jeśli klucz prywatny jest niezaładowany lub plik PDF nie został wybrany \\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_app___logic_1_1_app_logic_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_app___logic_1_1_app_logic_a78c1041d2f54e372cf0d9b034dc25d7f}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!decrypted\_key@{decrypted\_key}}
+\index{decrypted\_key@{decrypted\_key}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{decrypted\_key}{decrypted\_key}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a78c1041d2f54e372cf0d9b034dc25d7f} 
+App\+\_\+\+Logic.\+App\+Logic.\+decrypted\+\_\+key = None}
+
+\Hypertarget{class_app___logic_1_1_app_logic_ae62f15617e47d9e5d4f06193f15a09b2}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!encrypted\_key\_on\_pendrive@{encrypted\_key\_on\_pendrive}}
+\index{encrypted\_key\_on\_pendrive@{encrypted\_key\_on\_pendrive}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{encrypted\_key\_on\_pendrive}{encrypted\_key\_on\_pendrive}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_ae62f15617e47d9e5d4f06193f15a09b2} 
+App\+\_\+\+Logic.\+App\+Logic.\+encrypted\+\_\+key\+\_\+on\+\_\+pendrive = None}
+
+\Hypertarget{class_app___logic_1_1_app_logic_ab4551da5dd5f131640aa1e9932d38809}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!encryption\_manager@{encryption\_manager}}
+\index{encryption\_manager@{encryption\_manager}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{encryption\_manager}{encryption\_manager}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_ab4551da5dd5f131640aa1e9932d38809} 
+App\+\_\+\+Logic.\+App\+Logic.\+encryption\+\_\+manager = \mbox{\hyperlink{classencryption__manager_1_1_encryption_manager}{Encryption\+Manager}}()}
+
+\Hypertarget{class_app___logic_1_1_app_logic_a3765cc2eb67b16c1acf8ebfd2450cd58}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!file\_chosen@{file\_chosen}}
+\index{file\_chosen@{file\_chosen}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{file\_chosen}{file\_chosen}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a3765cc2eb67b16c1acf8ebfd2450cd58} 
+App\+\_\+\+Logic.\+App\+Logic.\+file\+\_\+chosen = None}
+
+\Hypertarget{class_app___logic_1_1_app_logic_a4ef9c7b2a2d6ee49d64358d125da2a1f}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!full\_path@{full\_path}}
+\index{full\_path@{full\_path}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{full\_path}{full\_path}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a4ef9c7b2a2d6ee49d64358d125da2a1f} 
+App\+\_\+\+Logic.\+App\+Logic.\+full\+\_\+path = "{}"{}}
+
+\Hypertarget{class_app___logic_1_1_app_logic_ae13855bf2ce8fa37d4091fe1d0abf99c}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!path\_to\_public\_keys@{path\_to\_public\_keys}}
+\index{path\_to\_public\_keys@{path\_to\_public\_keys}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{path\_to\_public\_keys}{path\_to\_public\_keys}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_ae13855bf2ce8fa37d4091fe1d0abf99c} 
+App\+\_\+\+Logic.\+App\+Logic.\+path\+\_\+to\+\_\+public\+\_\+keys = os.\+path.\+join("{}stored\+\_\+public\+\_\+keys"{}, "{}key.\+pub"{})}
+
+\Hypertarget{class_app___logic_1_1_app_logic_a3fbd83ee1555cb3a1a1f9436eb129e08}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!pdf\_to\_sign@{pdf\_to\_sign}}
+\index{pdf\_to\_sign@{pdf\_to\_sign}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{pdf\_to\_sign}{pdf\_to\_sign}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a3fbd83ee1555cb3a1a1f9436eb129e08} 
+App\+\_\+\+Logic.\+App\+Logic.\+pdf\+\_\+to\+\_\+sign = None}
+
+\Hypertarget{class_app___logic_1_1_app_logic_a5af3a6fbb8d0b96b93b3d7bdf292cfd4}\index{App\_Logic.AppLogic@{App\_Logic.AppLogic}!pendrive\_attached@{pendrive\_attached}}
+\index{pendrive\_attached@{pendrive\_attached}!App\_Logic.AppLogic@{App\_Logic.AppLogic}}
+\doxysubsubsection{\texorpdfstring{pendrive\_attached}{pendrive\_attached}}
+{\footnotesize\ttfamily \label{class_app___logic_1_1_app_logic_a5af3a6fbb8d0b96b93b3d7bdf292cfd4} 
+str App\+\_\+\+Logic.\+App\+Logic.\+pendrive\+\_\+attached = "{}"{}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_app___logic_8py}{App\+\_\+\+Logic.\+py}}\end{DoxyCompactItemize}

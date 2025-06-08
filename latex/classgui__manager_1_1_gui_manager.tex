@@ -1,0 +1,469 @@
+\doxysection{gui\+\_\+manager.\+Gui\+Manager Class Reference}
+\hypertarget{classgui__manager_1_1_gui_manager}{}\label{classgui__manager_1_1_gui_manager}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+
+
+Klasa do zarządzania GUI aplikacji.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a3d6cfbc621eb4272c6351946c2adfdc1}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_app___logic_1_1_app_logic}{App\+Logic}} \mbox{\hyperlink{classgui__manager_1_1_gui_manager_ab9a421170eb79fb240a710f063445e63}{app\+\_\+logic}})
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \doxylink{classgui__manager_1_1_gui_manager}{Gui\+Manager}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ad94946b2c2cd30463d775dc3b30984ba}{set\+\_\+screen\+\_\+accepted}} (self)
+\begin{DoxyCompactList}\small\item\em Ustawia ekran gdy klucz prywatny został znaleziony i został podany pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a20d199edd94eb35c5029f70bf2fda404}{set\+\_\+screen\+\_\+key\+\_\+not\+\_\+found}} (self)
+\begin{DoxyCompactList}\small\item\em Ustawia ekran, gdy klucz prywatny nie został znaleziony i wymagana jest generacja. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ab5c091780a72ed76ce62782a4f23e754}{set\+\_\+screen\+\_\+pin\+\_\+required}} (self)
+\begin{DoxyCompactList}\small\item\em Ustawia ekran wymagający podania pin-\/u do kontynuacji, gdy klucz jest wykryty. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a390be11fd0c7db1afed0d7cc6c747e7d}{create\+\_\+all\+\_\+buttons}} (self)
+\begin{DoxyCompactList}\small\item\em Tworzy wszystkie przyciski i łączy je z odpowiednimi metodami. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ab46a643a48de2f9583e9d8c9ec9c0f08}{create\+\_\+all\+\_\+input\+\_\+fields}} (self)
+\begin{DoxyCompactList}\small\item\em Tworzy wszystkie pola do wprowadzania danych (input fields) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a3130540bab5b1e9f41cddfe21a5ebc6b}{create\+\_\+all\+\_\+widgets}} (self)
+\begin{DoxyCompactList}\small\item\em Tworzy wszystkie etykiety (labels) widoczne na GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_abb55f5809fcd395d1e3258bba2194a52}{choose\+\_\+file}} (self)
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenie wyboru pliku przez użytkownika. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a27248c5f702f70f9641ed6d4951c9233}{detect\+\_\+key}} (self)
+\begin{DoxyCompactList}\small\item\em Wykrywa klucz i ustawia odpowiedni stan GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a76d53cdd485328bb5a8f80d76637cd80}{attach\+\_\+pendrive}} (self, pendrive)
+\begin{DoxyCompactList}\small\item\em Obsługuje zdarzenie wykrycia podłączonego pendrive\textquotesingle{}a. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a761a3e27da3dd789bfa350f4488d833e}{generate\+\_\+key}} (self)
+\begin{DoxyCompactList}\small\item\em Generuje klucz na podstawie wpisanego PIN-\/u i aktualizuje GUI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a077b861328b38816a706e1d466261a07}{check\+\_\+key}} (self)
+\begin{DoxyCompactList}\small\item\em Sprawdza poprawność PIN-\/u wpisanego przez użytkownika. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a8a0dcfbf7dafb48e5947d8f183579e3b}{sign\+\_\+document}} (self)
+\begin{DoxyCompactList}\small\item\em Podpisuje wybrany dokument. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a9aaa9b2cae5e9f3c3b84c99228b3350b}{check\+\_\+document}} (self)
+\begin{DoxyCompactList}\small\item\em Sprawdza, czy dokument PDF jest poprawnie podpisany (przy użyciu klucza publicznego) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ab9a421170eb79fb240a710f063445e63}{app\+\_\+logic}} = app\+\_\+logic
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a10f96b1c11893cbb5a0bea9fbbbbf322}{w}} = \mbox{\hyperlink{classgui_1_1_my_window}{My\+Window}}()
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_aebbd61e414e42786d057ac405e2e9b82}{choose\+\_\+file\+\_\+button}} = QPush\+Button("{}Choose file"{})
+\begin{DoxyCompactList}\small\item\em Tworzy przycisk wyboru pliku i ustawia jego zachowanie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a3bef4f3e15f483aae03e1c588494fd61}{choose\+\_\+file}}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a5082122a7efc49b6dbf4d50915402c3f}{accept\+\_\+button}} = QPush\+Button("{}Accept pin"{})
+\begin{DoxyCompactList}\small\item\em Tworzy przycisk akceptacji PIN-\/u i ustawia jego zachowanie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ac347abfad96d8e40ea09ad1916de8d01}{generate\+\_\+key}}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ac34220e50052613e58dbf13749bb6a42}{verify\+\_\+button}} = QPush\+Button("{}Verify pin"{})
+\begin{DoxyCompactList}\small\item\em Tworzy przycisk weryfikacji PIN-\/u i ustawia jego zachowanie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a68b3d50033a1eed1ef3f0dd7cf7966ab}{check\+\_\+key}}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_aafd76d524ecc5787baf82a9b91055b49}{sign\+\_\+document\+\_\+button}} = QPush\+Button("{}Sign document"{})
+\begin{DoxyCompactList}\small\item\em Tworzy przycisk do podpisywania dokumentu i ustawia jego zachowanie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_aaccf5200849aad5b26aaea96e186c5e0}{sign\+\_\+document}}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a4a4ea0a5a81c7aeb2a9b21346619d59f}{check\+\_\+signed\+\_\+document\+\_\+button}} = QPush\+Button("{}Check signed document"{})
+\begin{DoxyCompactList}\small\item\em Tworzy przycisk do sprawdzania podpisanego dokumentu i ustawia jego zachowanie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ac8c0c699a5eb89ebf7566cc1a9d43d48}{check\+\_\+document}}
+\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a3a7979fb613a3f883d1d5593fae1d504}{generate\+\_\+key\+\_\+input\+\_\+field}} = QLine\+Edit()
+\begin{DoxyCompactList}\small\item\em Pole do wpisania PIN-\/u podczas generowania klucza. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_aaf65122089185175c6be7032f1bd0ee8}{decrypt\+\_\+key\+\_\+input\+\_\+field}} = QLine\+Edit()
+\begin{DoxyCompactList}\small\item\em Pole do wpisania PIN-\/u podczas weryfikacji klucza. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a4b8990cd54d4d0dfded215d3e7c385a1}{error\+\_\+label}} = QLabel("{}"{})
+\begin{DoxyCompactList}\small\item\em Etykieta do wyświetlania błędów. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a065eaba224a2d8eba4673791f23a77d4}{file\+\_\+label}} = QLabel("{}"{})
+\begin{DoxyCompactList}\small\item\em Etykieta pokazująca wybrany plik. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a8db38c6bf70d1f97dd06ad56080b52f3}{pendrive\+\_\+label}} = QLabel("{}Waiting for plugging in pendrive"{})
+\begin{DoxyCompactList}\small\item\em Etykieta pokazująca informację o podłączonym pendrive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a54aa79061b9ad09d4fbf8e2a549be224}{key\+\_\+found\+\_\+label}} = QLabel("{}"{})
+\begin{DoxyCompactList}\small\item\em Etykieta pokazująca, że klucz został znaleziony. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a6cd4054098b7d7e209e23b44b3e007cc}{to\+\_\+short\+\_\+key\+\_\+label}} = QLabel("{}Your pin is too short!"{})
+\begin{DoxyCompactList}\small\item\em Etykieta informująca o zbyt krótkim pinie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_ae79a353a5d49909e87fa93d68772724e}{wrong\+\_\+pin\+\_\+label}} = QLabel("{}Wrong pin!"{})
+\begin{DoxyCompactList}\small\item\em Etykieta informująca o niepoprawnym PIN-\/ie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_aed05e8be4976d738a1fcce57e9b395b6}{pin\+\_\+ok\+\_\+label}} = QLabel("{}Pin OK!"{})
+\begin{DoxyCompactList}\small\item\em Etykieta informująca o poprawnym PIN-\/ie. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a09afd9581666bcdd0a168e3da3ae5ec2}{generating\+\_\+key\+\_\+label}} = QLabel("{}Generating key..."{})
+\begin{DoxyCompactList}\small\item\em Etykieta informująca o generowaniu klucza. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgui__manager_1_1_gui_manager_a6c34ca7300ff68a1b8f3aa6882a304c4}{pin\+\_\+required\+\_\+to\+\_\+sign\+\_\+label}} = QLabel("{}You cannot sign document unless you have a key"{})
+\begin{DoxyCompactList}\small\item\em Etykieta informująca, że nie można podpisać dokumentu bez klucza. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa do zarządzania GUI aplikacji. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+\_\+logic} & Instancja klasy odpowiedzialnej za logikę aplikacji (\doxylink{class_app___logic_1_1_app_logic}{App\+Logic}) \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-constructors}
+\Hypertarget{classgui__manager_1_1_gui_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgui__manager_1_1_gui_manager_a3d6cfbc621eb4272c6351946c2adfdc1}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a3d6cfbc621eb4272c6351946c2adfdc1} 
+gui\+\_\+manager.\+Gui\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{\mbox{\hyperlink{class_app___logic_1_1_app_logic}{App\+Logic}}}]{app\+\_\+logic}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy \doxylink{classgui__manager_1_1_gui_manager}{Gui\+Manager}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app\+\_\+logic} & Obiekt logiki aplikacji, wykorzystywany do operacji biznesowych \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classgui__manager_1_1_gui_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgui__manager_1_1_gui_manager_a76d53cdd485328bb5a8f80d76637cd80}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!attach\_pendrive@{attach\_pendrive}}
+\index{attach\_pendrive@{attach\_pendrive}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{attach\_pendrive()}{attach\_pendrive()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a76d53cdd485328bb5a8f80d76637cd80} 
+gui\+\_\+manager.\+Gui\+Manager.\+attach\+\_\+pendrive (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{pendrive}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje zdarzenie wykrycia podłączonego pendrive\textquotesingle{}a. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pendrive} & Ścieżka (nazwa dysku) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classgui__manager_1_1_gui_manager_a9aaa9b2cae5e9f3c3b84c99228b3350b}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!check\_document@{check\_document}}
+\index{check\_document@{check\_document}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{check\_document()}{check\_document()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a9aaa9b2cae5e9f3c3b84c99228b3350b} 
+gui\+\_\+manager.\+Gui\+Manager.\+check\+\_\+document (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza, czy dokument PDF jest poprawnie podpisany (przy użyciu klucza publicznego) 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a077b861328b38816a706e1d466261a07}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!check\_key@{check\_key}}
+\index{check\_key@{check\_key}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{check\_key()}{check\_key()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a077b861328b38816a706e1d466261a07} 
+gui\+\_\+manager.\+Gui\+Manager.\+check\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Sprawdza poprawność PIN-\/u wpisanego przez użytkownika. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_abb55f5809fcd395d1e3258bba2194a52}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!choose\_file@{choose\_file}}
+\index{choose\_file@{choose\_file}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{choose\_file()}{choose\_file()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_abb55f5809fcd395d1e3258bba2194a52} 
+gui\+\_\+manager.\+Gui\+Manager.\+choose\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Obsługuje zdarzenie wyboru pliku przez użytkownika. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a390be11fd0c7db1afed0d7cc6c747e7d}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!create\_all\_buttons@{create\_all\_buttons}}
+\index{create\_all\_buttons@{create\_all\_buttons}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{create\_all\_buttons()}{create\_all\_buttons()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a390be11fd0c7db1afed0d7cc6c747e7d} 
+gui\+\_\+manager.\+Gui\+Manager.\+create\+\_\+all\+\_\+buttons (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Tworzy wszystkie przyciski i łączy je z odpowiednimi metodami. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ab46a643a48de2f9583e9d8c9ec9c0f08}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!create\_all\_input\_fields@{create\_all\_input\_fields}}
+\index{create\_all\_input\_fields@{create\_all\_input\_fields}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{create\_all\_input\_fields()}{create\_all\_input\_fields()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ab46a643a48de2f9583e9d8c9ec9c0f08} 
+gui\+\_\+manager.\+Gui\+Manager.\+create\+\_\+all\+\_\+input\+\_\+fields (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Tworzy wszystkie pola do wprowadzania danych (input fields) 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a3130540bab5b1e9f41cddfe21a5ebc6b}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!create\_all\_widgets@{create\_all\_widgets}}
+\index{create\_all\_widgets@{create\_all\_widgets}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{create\_all\_widgets()}{create\_all\_widgets()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a3130540bab5b1e9f41cddfe21a5ebc6b} 
+gui\+\_\+manager.\+Gui\+Manager.\+create\+\_\+all\+\_\+widgets (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Tworzy wszystkie etykiety (labels) widoczne na GUI. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a27248c5f702f70f9641ed6d4951c9233}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!detect\_key@{detect\_key}}
+\index{detect\_key@{detect\_key}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{detect\_key()}{detect\_key()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a27248c5f702f70f9641ed6d4951c9233} 
+gui\+\_\+manager.\+Gui\+Manager.\+detect\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Wykrywa klucz i ustawia odpowiedni stan GUI. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a761a3e27da3dd789bfa350f4488d833e}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!generate\_key@{generate\_key}}
+\index{generate\_key@{generate\_key}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{generate\_key()}{generate\_key()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a761a3e27da3dd789bfa350f4488d833e} 
+gui\+\_\+manager.\+Gui\+Manager.\+generate\+\_\+key (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Generuje klucz na podstawie wpisanego PIN-\/u i aktualizuje GUI. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ad94946b2c2cd30463d775dc3b30984ba}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!set\_screen\_accepted@{set\_screen\_accepted}}
+\index{set\_screen\_accepted@{set\_screen\_accepted}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{set\_screen\_accepted()}{set\_screen\_accepted()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ad94946b2c2cd30463d775dc3b30984ba} 
+gui\+\_\+manager.\+Gui\+Manager.\+set\+\_\+screen\+\_\+accepted (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ekran gdy klucz prywatny został znaleziony i został podany pin. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a20d199edd94eb35c5029f70bf2fda404}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!set\_screen\_key\_not\_found@{set\_screen\_key\_not\_found}}
+\index{set\_screen\_key\_not\_found@{set\_screen\_key\_not\_found}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{set\_screen\_key\_not\_found()}{set\_screen\_key\_not\_found()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a20d199edd94eb35c5029f70bf2fda404} 
+gui\+\_\+manager.\+Gui\+Manager.\+set\+\_\+screen\+\_\+key\+\_\+not\+\_\+found (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ekran, gdy klucz prywatny nie został znaleziony i wymagana jest generacja. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ab5c091780a72ed76ce62782a4f23e754}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!set\_screen\_pin\_required@{set\_screen\_pin\_required}}
+\index{set\_screen\_pin\_required@{set\_screen\_pin\_required}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{set\_screen\_pin\_required()}{set\_screen\_pin\_required()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ab5c091780a72ed76ce62782a4f23e754} 
+gui\+\_\+manager.\+Gui\+Manager.\+set\+\_\+screen\+\_\+pin\+\_\+required (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Ustawia ekran wymagający podania pin-\/u do kontynuacji, gdy klucz jest wykryty. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a8a0dcfbf7dafb48e5947d8f183579e3b}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!sign\_document@{sign\_document}}
+\index{sign\_document@{sign\_document}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{sign\_document()}{sign\_document()}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a8a0dcfbf7dafb48e5947d8f183579e3b} 
+gui\+\_\+manager.\+Gui\+Manager.\+sign\+\_\+document (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Podpisuje wybrany dokument. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classgui__manager_1_1_gui_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classgui__manager_1_1_gui_manager_a5082122a7efc49b6dbf4d50915402c3f}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!accept\_button@{accept\_button}}
+\index{accept\_button@{accept\_button}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{accept\_button}{accept\_button}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a5082122a7efc49b6dbf4d50915402c3f} 
+gui\+\_\+manager.\+Gui\+Manager.\+accept\+\_\+button = QPush\+Button("{}Accept pin"{})}
+
+
+
+Tworzy przycisk akceptacji PIN-\/u i ustawia jego zachowanie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ab9a421170eb79fb240a710f063445e63}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!app\_logic@{app\_logic}}
+\index{app\_logic@{app\_logic}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{app\_logic}{app\_logic}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ab9a421170eb79fb240a710f063445e63} 
+gui\+\_\+manager.\+Gui\+Manager.\+app\+\_\+logic = app\+\_\+logic}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ac8c0c699a5eb89ebf7566cc1a9d43d48}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!check\_document@{check\_document}}
+\index{check\_document@{check\_document}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{check\_document}{check\_document}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ac8c0c699a5eb89ebf7566cc1a9d43d48} 
+gui\+\_\+manager.\+Gui\+Manager.\+check\+\_\+document}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a68b3d50033a1eed1ef3f0dd7cf7966ab}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!check\_key@{check\_key}}
+\index{check\_key@{check\_key}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{check\_key}{check\_key}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a68b3d50033a1eed1ef3f0dd7cf7966ab} 
+gui\+\_\+manager.\+Gui\+Manager.\+check\+\_\+key}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a4a4ea0a5a81c7aeb2a9b21346619d59f}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!check\_signed\_document\_button@{check\_signed\_document\_button}}
+\index{check\_signed\_document\_button@{check\_signed\_document\_button}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{check\_signed\_document\_button}{check\_signed\_document\_button}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a4a4ea0a5a81c7aeb2a9b21346619d59f} 
+gui\+\_\+manager.\+Gui\+Manager.\+check\+\_\+signed\+\_\+document\+\_\+button = QPush\+Button("{}Check signed document"{})}
+
+
+
+Tworzy przycisk do sprawdzania podpisanego dokumentu i ustawia jego zachowanie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a3bef4f3e15f483aae03e1c588494fd61}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!choose\_file@{choose\_file}}
+\index{choose\_file@{choose\_file}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{choose\_file}{choose\_file}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a3bef4f3e15f483aae03e1c588494fd61} 
+gui\+\_\+manager.\+Gui\+Manager.\+choose\+\_\+file}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_aebbd61e414e42786d057ac405e2e9b82}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!choose\_file\_button@{choose\_file\_button}}
+\index{choose\_file\_button@{choose\_file\_button}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{choose\_file\_button}{choose\_file\_button}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_aebbd61e414e42786d057ac405e2e9b82} 
+gui\+\_\+manager.\+Gui\+Manager.\+choose\+\_\+file\+\_\+button = QPush\+Button("{}Choose file"{})}
+
+
+
+Tworzy przycisk wyboru pliku i ustawia jego zachowanie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_aaf65122089185175c6be7032f1bd0ee8}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!decrypt\_key\_input\_field@{decrypt\_key\_input\_field}}
+\index{decrypt\_key\_input\_field@{decrypt\_key\_input\_field}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{decrypt\_key\_input\_field}{decrypt\_key\_input\_field}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_aaf65122089185175c6be7032f1bd0ee8} 
+gui\+\_\+manager.\+Gui\+Manager.\+decrypt\+\_\+key\+\_\+input\+\_\+field = QLine\+Edit()}
+
+
+
+Pole do wpisania PIN-\/u podczas weryfikacji klucza. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a4b8990cd54d4d0dfded215d3e7c385a1}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!error\_label@{error\_label}}
+\index{error\_label@{error\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{error\_label}{error\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a4b8990cd54d4d0dfded215d3e7c385a1} 
+gui\+\_\+manager.\+Gui\+Manager.\+error\+\_\+label = QLabel("{}"{})}
+
+
+
+Etykieta do wyświetlania błędów. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a065eaba224a2d8eba4673791f23a77d4}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!file\_label@{file\_label}}
+\index{file\_label@{file\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{file\_label}{file\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a065eaba224a2d8eba4673791f23a77d4} 
+gui\+\_\+manager.\+Gui\+Manager.\+file\+\_\+label = QLabel("{}"{})}
+
+
+
+Etykieta pokazująca wybrany plik. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ac347abfad96d8e40ea09ad1916de8d01}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!generate\_key@{generate\_key}}
+\index{generate\_key@{generate\_key}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{generate\_key}{generate\_key}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ac347abfad96d8e40ea09ad1916de8d01} 
+gui\+\_\+manager.\+Gui\+Manager.\+generate\+\_\+key}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a3a7979fb613a3f883d1d5593fae1d504}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!generate\_key\_input\_field@{generate\_key\_input\_field}}
+\index{generate\_key\_input\_field@{generate\_key\_input\_field}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{generate\_key\_input\_field}{generate\_key\_input\_field}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a3a7979fb613a3f883d1d5593fae1d504} 
+gui\+\_\+manager.\+Gui\+Manager.\+generate\+\_\+key\+\_\+input\+\_\+field = QLine\+Edit()}
+
+
+
+Pole do wpisania PIN-\/u podczas generowania klucza. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a09afd9581666bcdd0a168e3da3ae5ec2}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!generating\_key\_label@{generating\_key\_label}}
+\index{generating\_key\_label@{generating\_key\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{generating\_key\_label}{generating\_key\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a09afd9581666bcdd0a168e3da3ae5ec2} 
+gui\+\_\+manager.\+Gui\+Manager.\+generating\+\_\+key\+\_\+label = QLabel("{}Generating key..."{})}
+
+
+
+Etykieta informująca o generowaniu klucza. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a54aa79061b9ad09d4fbf8e2a549be224}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!key\_found\_label@{key\_found\_label}}
+\index{key\_found\_label@{key\_found\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{key\_found\_label}{key\_found\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a54aa79061b9ad09d4fbf8e2a549be224} 
+gui\+\_\+manager.\+Gui\+Manager.\+key\+\_\+found\+\_\+label = QLabel("{}"{})}
+
+
+
+Etykieta pokazująca, że klucz został znaleziony. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a8db38c6bf70d1f97dd06ad56080b52f3}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!pendrive\_label@{pendrive\_label}}
+\index{pendrive\_label@{pendrive\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{pendrive\_label}{pendrive\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a8db38c6bf70d1f97dd06ad56080b52f3} 
+gui\+\_\+manager.\+Gui\+Manager.\+pendrive\+\_\+label = QLabel("{}Waiting for plugging in pendrive"{})}
+
+
+
+Etykieta pokazująca informację o podłączonym pendrive. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_aed05e8be4976d738a1fcce57e9b395b6}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!pin\_ok\_label@{pin\_ok\_label}}
+\index{pin\_ok\_label@{pin\_ok\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{pin\_ok\_label}{pin\_ok\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_aed05e8be4976d738a1fcce57e9b395b6} 
+gui\+\_\+manager.\+Gui\+Manager.\+pin\+\_\+ok\+\_\+label = QLabel("{}Pin OK!"{})}
+
+
+
+Etykieta informująca o poprawnym PIN-\/ie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a6c34ca7300ff68a1b8f3aa6882a304c4}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!pin\_required\_to\_sign\_label@{pin\_required\_to\_sign\_label}}
+\index{pin\_required\_to\_sign\_label@{pin\_required\_to\_sign\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{pin\_required\_to\_sign\_label}{pin\_required\_to\_sign\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a6c34ca7300ff68a1b8f3aa6882a304c4} 
+gui\+\_\+manager.\+Gui\+Manager.\+pin\+\_\+required\+\_\+to\+\_\+sign\+\_\+label = QLabel("{}You cannot sign document unless you have a key"{})}
+
+
+
+Etykieta informująca, że nie można podpisać dokumentu bez klucza. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_aaccf5200849aad5b26aaea96e186c5e0}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!sign\_document@{sign\_document}}
+\index{sign\_document@{sign\_document}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{sign\_document}{sign\_document}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_aaccf5200849aad5b26aaea96e186c5e0} 
+gui\+\_\+manager.\+Gui\+Manager.\+sign\+\_\+document}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_aafd76d524ecc5787baf82a9b91055b49}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!sign\_document\_button@{sign\_document\_button}}
+\index{sign\_document\_button@{sign\_document\_button}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{sign\_document\_button}{sign\_document\_button}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_aafd76d524ecc5787baf82a9b91055b49} 
+gui\+\_\+manager.\+Gui\+Manager.\+sign\+\_\+document\+\_\+button = QPush\+Button("{}Sign document"{})}
+
+
+
+Tworzy przycisk do podpisywania dokumentu i ustawia jego zachowanie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a6cd4054098b7d7e209e23b44b3e007cc}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!to\_short\_key\_label@{to\_short\_key\_label}}
+\index{to\_short\_key\_label@{to\_short\_key\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{to\_short\_key\_label}{to\_short\_key\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a6cd4054098b7d7e209e23b44b3e007cc} 
+gui\+\_\+manager.\+Gui\+Manager.\+to\+\_\+short\+\_\+key\+\_\+label = QLabel("{}Your pin is too short!"{})}
+
+
+
+Etykieta informująca o zbyt krótkim pinie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ac34220e50052613e58dbf13749bb6a42}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!verify\_button@{verify\_button}}
+\index{verify\_button@{verify\_button}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{verify\_button}{verify\_button}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ac34220e50052613e58dbf13749bb6a42} 
+gui\+\_\+manager.\+Gui\+Manager.\+verify\+\_\+button = QPush\+Button("{}Verify pin"{})}
+
+
+
+Tworzy przycisk weryfikacji PIN-\/u i ustawia jego zachowanie. 
+
+\Hypertarget{classgui__manager_1_1_gui_manager_a10f96b1c11893cbb5a0bea9fbbbbf322}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!w@{w}}
+\index{w@{w}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{w}{w}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_a10f96b1c11893cbb5a0bea9fbbbbf322} 
+gui\+\_\+manager.\+Gui\+Manager.\+w = \mbox{\hyperlink{classgui_1_1_my_window}{My\+Window}}()}
+
+\Hypertarget{classgui__manager_1_1_gui_manager_ae79a353a5d49909e87fa93d68772724e}\index{gui\_manager.GuiManager@{gui\_manager.GuiManager}!wrong\_pin\_label@{wrong\_pin\_label}}
+\index{wrong\_pin\_label@{wrong\_pin\_label}!gui\_manager.GuiManager@{gui\_manager.GuiManager}}
+\doxysubsubsection{\texorpdfstring{wrong\_pin\_label}{wrong\_pin\_label}}
+{\footnotesize\ttfamily \label{classgui__manager_1_1_gui_manager_ae79a353a5d49909e87fa93d68772724e} 
+gui\+\_\+manager.\+Gui\+Manager.\+wrong\+\_\+pin\+\_\+label = QLabel("{}Wrong pin!"{})}
+
+
+
+Etykieta informująca o niepoprawnym PIN-\/ie. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gui__manager_8py}{gui\+\_\+manager.\+py}}\end{DoxyCompactItemize}

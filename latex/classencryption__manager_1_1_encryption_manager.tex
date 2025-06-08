@@ -1,0 +1,127 @@
+\doxysection{encryption\+\_\+manager.\+Encryption\+Manager Class Reference}
+\hypertarget{classencryption__manager_1_1_encryption_manager}{}\label{classencryption__manager_1_1_encryption_manager}\index{encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}}
+
+
+Klasa zarządzająca szyfrowaniem, generowaniem kluczy RSA oraz szyfrowaniem AES.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classencryption__manager_1_1_encryption_manager_a11c19de0a5c4e1bda0ebf1005a9d6af0}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy (obecnie pusty) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classencryption__manager_1_1_encryption_manager_a7b46dc0099971fb438fd8de5dfdb7d1e}{hash\+\_\+pdf}} (file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Haszuje plik PDF używając SHA-\/256. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classencryption__manager_1_1_encryption_manager_a0c46d454e4ebb021f6d2196a9be55a1b}{generate\+\_\+\+RSA\+\_\+keys}} ()
+\begin{DoxyCompactList}\small\item\em Generuje parę kluczy RSA (prywatny i publiczny) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classencryption__manager_1_1_encryption_manager_a6ba77f178e42e81986566026c372d832}{AES\+\_\+key\+\_\+encryption}} (pin, private\+\_\+key)
+\begin{DoxyCompactList}\small\item\em Szyfruje klucz prywatny AESem na podstawie PINu. \end{DoxyCompactList}\item 
+bytes \mbox{\hyperlink{classencryption__manager_1_1_encryption_manager_a74fca8503385fee42c33f344cd3a62be}{decrypt\+\_\+private\+\_\+key}} (bytes encrypted\+\_\+data, pin)
+\begin{DoxyCompactList}\small\item\em Odszyfrowuje zaszyfrowany klucz prywatny AESem za pomocą PINu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa zarządzająca szyfrowaniem, generowaniem kluczy RSA oraz szyfrowaniem AES. 
+
+\label{doc-constructors}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_a11c19de0a5c4e1bda0ebf1005a9d6af0}\index{encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classencryption__manager_1_1_encryption_manager_a11c19de0a5c4e1bda0ebf1005a9d6af0} 
+encryption\+\_\+manager.\+Encryption\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy (obecnie pusty) 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_a6ba77f178e42e81986566026c372d832}\index{encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}!AES\_key\_encryption@{AES\_key\_encryption}}
+\index{AES\_key\_encryption@{AES\_key\_encryption}!encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}}
+\doxysubsubsection{\texorpdfstring{AES\_key\_encryption()}{AES\_key\_encryption()}}
+{\footnotesize\ttfamily \label{classencryption__manager_1_1_encryption_manager_a6ba77f178e42e81986566026c372d832} 
+encryption\+\_\+manager.\+Encryption\+Manager.\+AES\+\_\+key\+\_\+encryption (\begin{DoxyParamCaption}\item[{}]{pin}{, }\item[{}]{private\+\_\+key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Szyfruje klucz prywatny AESem na podstawie PINu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & PIN używany do utworzenia klucza AES \\
+\hline
+{\em private\+\_\+key} & Klucz prywatny RSA w formacie bajtowym \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes Zaszyfrowany klucz prywatny wraz z IV 
+\end{DoxyReturn}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_a74fca8503385fee42c33f344cd3a62be}\index{encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}!decrypt\_private\_key@{decrypt\_private\_key}}
+\index{decrypt\_private\_key@{decrypt\_private\_key}!encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}}
+\doxysubsubsection{\texorpdfstring{decrypt\_private\_key()}{decrypt\_private\_key()}}
+{\footnotesize\ttfamily \label{classencryption__manager_1_1_encryption_manager_a74fca8503385fee42c33f344cd3a62be} 
+ bytes encryption\+\_\+manager.\+Encryption\+Manager.\+decrypt\+\_\+private\+\_\+key (\begin{DoxyParamCaption}\item[{bytes}]{encrypted\+\_\+data}{, }\item[{}]{pin}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Odszyfrowuje zaszyfrowany klucz prywatny AESem za pomocą PINu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encrypted\+\_\+data} & Zaszyfrowany klucz prywatny (IV + ciphertext) \\
+\hline
+{\em pin} & PIN do odszyfrowania klucza \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bytes Odszyfrowany klucz prywatny RSA 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Value\+Error} & Jeśli padding jest nieprawidłowy (błędny PIN) \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_a0c46d454e4ebb021f6d2196a9be55a1b}\index{encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}!generate\_RSA\_keys@{generate\_RSA\_keys}}
+\index{generate\_RSA\_keys@{generate\_RSA\_keys}!encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}}
+\doxysubsubsection{\texorpdfstring{generate\_RSA\_keys()}{generate\_RSA\_keys()}}
+{\footnotesize\ttfamily \label{classencryption__manager_1_1_encryption_manager_a0c46d454e4ebb021f6d2196a9be55a1b} 
+encryption\+\_\+manager.\+Encryption\+Manager.\+generate\+\_\+\+RSA\+\_\+keys (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generuje parę kluczy RSA (prywatny i publiczny) 
+
+\begin{DoxyReturn}{Returns}
+tuple Zwraca krotkę (private\+\_\+key, public\+\_\+key) w formacie bajtowym 
+\end{DoxyReturn}
+\Hypertarget{classencryption__manager_1_1_encryption_manager_a7b46dc0099971fb438fd8de5dfdb7d1e}\index{encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}!hash\_pdf@{hash\_pdf}}
+\index{hash\_pdf@{hash\_pdf}!encryption\_manager.EncryptionManager@{encryption\_manager.EncryptionManager}}
+\doxysubsubsection{\texorpdfstring{hash\_pdf()}{hash\_pdf()}}
+{\footnotesize\ttfamily \label{classencryption__manager_1_1_encryption_manager_a7b46dc0099971fb438fd8de5dfdb7d1e} 
+encryption\+\_\+manager.\+Encryption\+Manager.\+hash\+\_\+pdf (\begin{DoxyParamCaption}\item[{}]{file\+\_\+path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Haszuje plik PDF używając SHA-\/256. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & Ścieżka do pliku PDF \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SHA256.\+Hash Obiekt z hashem pliku 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{encryption__manager_8py}{encryption\+\_\+manager.\+py}}\end{DoxyCompactItemize}

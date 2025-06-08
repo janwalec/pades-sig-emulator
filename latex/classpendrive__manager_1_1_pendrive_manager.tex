@@ -1,0 +1,110 @@
+\doxysection{pendrive\+\_\+manager.\+Pendrive\+Manager Class Reference}
+\hypertarget{classpendrive__manager_1_1_pendrive_manager}{}\label{classpendrive__manager_1_1_pendrive_manager}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+
+
+Klasa do wykrywania i zarządzania podłączonymi pendrive\textquotesingle{}ami (urządzeniami przenośnymi)  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpendrive__manager_1_1_pendrive_manager_a226ab62f44703c17dab83a8276246396}{detect\+\_\+new\+\_\+drives}} (self)
+\begin{DoxyCompactList}\small\item\em Wykrywa nowe podłączone urządzenia przenośne po uruchomieniu aplikacji. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpendrive__manager_1_1_pendrive_manager_a995f9524fe34e0cf0248102c8e4a19d2}{reset\+\_\+search}} (self)
+\begin{DoxyCompactList}\small\item\em Resetuje wewnętrzne przechowywanie ścieżki wykrytego pendrive\textquotesingle{}a. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpendrive__manager_1_1_pendrive_manager_a746e111b317adc2416fab3cfef049742}{get\+\_\+search}} (self)
+\begin{DoxyCompactList}\small\item\em Zwraca ścieżkę ostatnio wykrytego pendrive\textquotesingle{}a. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classpendrive__manager_1_1_pendrive_manager_a4746937db599b724df02023dbe251651}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy inicjalizujący zmienną przechowującą ścieżkę pendrive\textquotesingle{}a. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpendrive__manager_1_1_pendrive_manager_ab085957f2a2aaf48d43993c2afc95e49}{search\+\_\+for\+\_\+removable\+\_\+drives}} ()
+\begin{DoxyCompactList}\small\item\em Statyczna metoda wyszukująca wszystkie urządzenia oznaczone jako \textquotesingle{}removable\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tuple \mbox{\hyperlink{classpendrive__manager_1_1_pendrive_manager_a60db923b7640e4f6447560dbcddca090}{drives\+\_\+path}} = (drives\+\_\+after -\/ drives\+\_\+before).pop()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa do wykrywania i zarządzania podłączonymi pendrive\textquotesingle{}ami (urządzeniami przenośnymi) 
+
+\label{doc-constructors}
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_a4746937db599b724df02023dbe251651}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classpendrive__manager_1_1_pendrive_manager_a4746937db599b724df02023dbe251651} 
+pendrive\+\_\+manager.\+Pendrive\+Manager.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor klasy inicjalizujący zmienną przechowującą ścieżkę pendrive\textquotesingle{}a. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_a226ab62f44703c17dab83a8276246396}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}!detect\_new\_drives@{detect\_new\_drives}}
+\index{detect\_new\_drives@{detect\_new\_drives}!pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+\doxysubsubsection{\texorpdfstring{detect\_new\_drives()}{detect\_new\_drives()}}
+{\footnotesize\ttfamily \label{classpendrive__manager_1_1_pendrive_manager_a226ab62f44703c17dab83a8276246396} 
+pendrive\+\_\+manager.\+Pendrive\+Manager.\+detect\+\_\+new\+\_\+drives (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Wykrywa nowe podłączone urządzenia przenośne po uruchomieniu aplikacji. 
+
+Metoda monitoruje system, aż zostanie podłączony nowy pendrive. Po wykryciu nowego urządzenia zwraca jego ścieżkę, która jest zachowywana w Gui\+Manager i App\+Logic \Hypertarget{classpendrive__manager_1_1_pendrive_manager_a746e111b317adc2416fab3cfef049742}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}!get\_search@{get\_search}}
+\index{get\_search@{get\_search}!pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+\doxysubsubsection{\texorpdfstring{get\_search()}{get\_search()}}
+{\footnotesize\ttfamily \label{classpendrive__manager_1_1_pendrive_manager_a746e111b317adc2416fab3cfef049742} 
+pendrive\+\_\+manager.\+Pendrive\+Manager.\+get\+\_\+search (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Zwraca ścieżkę ostatnio wykrytego pendrive\textquotesingle{}a. 
+
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_a995f9524fe34e0cf0248102c8e4a19d2}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}!reset\_search@{reset\_search}}
+\index{reset\_search@{reset\_search}!pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+\doxysubsubsection{\texorpdfstring{reset\_search()}{reset\_search()}}
+{\footnotesize\ttfamily \label{classpendrive__manager_1_1_pendrive_manager_a995f9524fe34e0cf0248102c8e4a19d2} 
+pendrive\+\_\+manager.\+Pendrive\+Manager.\+reset\+\_\+search (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+Resetuje wewnętrzne przechowywanie ścieżki wykrytego pendrive\textquotesingle{}a. 
+
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_ab085957f2a2aaf48d43993c2afc95e49}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}!search\_for\_removable\_drives@{search\_for\_removable\_drives}}
+\index{search\_for\_removable\_drives@{search\_for\_removable\_drives}!pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+\doxysubsubsection{\texorpdfstring{search\_for\_removable\_drives()}{search\_for\_removable\_drives()}}
+{\footnotesize\ttfamily \label{classpendrive__manager_1_1_pendrive_manager_ab085957f2a2aaf48d43993c2afc95e49} 
+pendrive\+\_\+manager.\+Pendrive\+Manager.\+search\+\_\+for\+\_\+removable\+\_\+drives (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Statyczna metoda wyszukująca wszystkie urządzenia oznaczone jako \textquotesingle{}removable\textquotesingle{}. 
+
+\begin{DoxyReturn}{Returns}
+list Lista ścieżek urządzeń przenośnych (pendrive) 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classpendrive__manager_1_1_pendrive_manager_a60db923b7640e4f6447560dbcddca090}\index{pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}!drives\_path@{drives\_path}}
+\index{drives\_path@{drives\_path}!pendrive\_manager.PendriveManager@{pendrive\_manager.PendriveManager}}
+\doxysubsubsection{\texorpdfstring{drives\_path}{drives\_path}}
+{\footnotesize\ttfamily \label{classpendrive__manager_1_1_pendrive_manager_a60db923b7640e4f6447560dbcddca090} 
+pendrive\+\_\+manager.\+Pendrive\+Manager.\+drives\+\_\+path = (drives\+\_\+after -\/ drives\+\_\+before).pop()}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pendrive__manager_8py}{pendrive\+\_\+manager.\+py}}\end{DoxyCompactItemize}

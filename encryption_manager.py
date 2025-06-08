@@ -3,9 +3,13 @@ from Crypto.PublicKey import RSA
 from Crypto.Hash import SHA256
 from Crypto.Cipher import AES
 
-
-
+##
+# @brief Klasa zarządzająca szyfrowaniem, generowaniem kluczy RSA oraz szyfrowaniem AES
 class EncryptionManager():
+    ##
+    # @brief Haszuje plik PDF używając SHA-256
+    # @param file_path Ścieżka do pliku PDF
+    # @return SHA256.Hash Obiekt z hashem pliku
     @staticmethod
     def hash_pdf(file_path):
         h = SHA256.new()
@@ -14,7 +18,9 @@ class EncryptionManager():
                 h.update(chunk)
         return h
 
-
+    ##
+    # @brief Generuje parę kluczy RSA (prywatny i publiczny)
+    # @return tuple Zwraca krotkę (private_key, public_key) w formacie bajtowym
     @staticmethod
     def generate_RSA_keys():
         print("GENERATING RSA")
@@ -24,6 +30,11 @@ class EncryptionManager():
         print("Generating finished")
         return private_key, public_key
 
+    ##
+    # @brief Szyfruje klucz prywatny AESem na podstawie PINu
+    # @param pin PIN używany do utworzenia klucza AES
+    # @param private_key Klucz prywatny RSA w formacie bajtowym
+    # @return bytes Zaszyfrowany klucz prywatny wraz z IV
     @staticmethod
     def AES_key_encryption(pin, private_key):
         hasher = SHA256.new()
@@ -39,6 +50,12 @@ class EncryptionManager():
 
         return iv + encrypted_key
 
+    ##
+    # @brief Odszyfrowuje zaszyfrowany klucz prywatny AESem za pomocą PINu
+    # @param encrypted_data Zaszyfrowany klucz prywatny (IV + ciphertext)
+    # @param pin PIN do odszyfrowania klucza
+    # @return bytes Odszyfrowany klucz prywatny RSA
+    # @throws ValueError Jeśli padding jest nieprawidłowy (błędny PIN)
     @staticmethod
     def decrypt_private_key(encrypted_data: bytes, pin) -> bytes:
         iv = encrypted_data[:AES.block_size]
@@ -58,24 +75,7 @@ class EncryptionManager():
 
         return private_key
 
-
+    ##
+    # @brief Konstruktor klasy (obecnie pusty)
     def __init__(self):
         pass
-
-'''
-em = EncryptionManager()
-pin = input("Enter PIN: ")
-print("GENERATING RSA KEYS...")
-private_key, public_key = em.generate_RSA_keys()
-print(private_key, "\n", public_key)
-
-print("ENCRYTING PRIVATE KEY...")
-encrypted = em.AES_key_encryption(pin, private_key)
-print(encrypted)
-
-print("***********************************")
-print("DECRYPTING ENCRYPTED PRIVATE KEY...")
-pin = input("Enter PIN: ")
-decrypted = em.decrypt_private_key(encrypted, pin)
-print(decrypted)
-'''
