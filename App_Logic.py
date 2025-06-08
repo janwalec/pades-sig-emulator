@@ -1,5 +1,4 @@
 import os
-
 #from Crypto.SelfTest.Protocol.test_ecdh import public_key
 from Crypto.Signature import pkcs1_15
 
@@ -20,6 +19,7 @@ class AppLogic:
         return file_name.lower().endswith(".pdf")
 
     def detect_key(self):
+        # searches for private, encrypted key on attached device
         if self.pendrive_attached == "":
             return False
 
@@ -38,14 +38,18 @@ class AppLogic:
         self.pendrive_attached = pendrive
 
     def set_file(self, filename):
+        # method that saves PATH to pdf file
         if filename and self.check_if_pdf(filename):
+            # filename is not empty and it is *.pdf
             self.file_chosen = filename
             return True
         else:
+            # filename empty or file chosen is not *.pdf
             self.file_chosen = None
             return False
 
     def save_keys(self, public_key, encrypted_key):
+        # saves encrypted key on user's removable device, and public key on hard drive
         with open(self.full_path, "wb") as f:
             f.write(encrypted_key)
 
@@ -53,11 +57,13 @@ class AppLogic:
             f.write(public_key)
 
     def generate_key(self, pin):
+        # generates private key based on pin
         private_key, public_key = self.encryption_manager.generate_RSA_keys()
         encrypted = self.encryption_manager.AES_key_encryption(pin, private_key)
         self.save_keys(public_key, encrypted)
 
     def compare_pin(self, pin):
+        # decrypts encrypted private key with pin and checks for errors
         with open(self.path_to_public_keys, "rb") as f:
             try:
                 print(self.encrypted_key_on_pendrive)
@@ -67,6 +73,7 @@ class AppLogic:
                 raise e
 
     def sign_document(self):
+        # hashes chosen pdf and signs the hash, then saves it on hard drive
         if self.decrypted_key is None:
             raise ValueError("Private key missing")
 
@@ -84,6 +91,7 @@ class AppLogic:
             f.write(signature)
 
     def check_signed_document(self):
+        # checks if signed hash is associated with public key saved on hard drive
         if not self.pdf_to_sign:
             raise ValueError("Wrong pdf")
         public_key_file = None

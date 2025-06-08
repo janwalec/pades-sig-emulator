@@ -5,6 +5,7 @@ import time
 class PendriveManager:
     @staticmethod
     def search_for_removable_drives():
+        # return list of devices that got 'removable' tag
         rem = []
         for dev in psutil.disk_partitions():
             if 'removable' in dev.opts:
@@ -12,6 +13,7 @@ class PendriveManager:
         return rem
 
     def detect_new_drives(self):
+        # searches for pendrive, stops if one is connected (after app was run)
         print("Searching for new drives... Plug in your removable device to start aplication")
         drives_before = set(self.search_for_removable_drives())
         while 1:
